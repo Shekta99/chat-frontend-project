@@ -52,6 +52,9 @@ function TestimonialsPage() {
             key={item.name}
             width="80%"
             marginX="auto"
+            borderRadius="5px"
+            border="1px solid gray"
+            padding="3%"
           >
             <Box textAlign="left" px="3%">
               <Heading size="sm">{item.name}</Heading>
