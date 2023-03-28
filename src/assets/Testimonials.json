@@ -1,0 +1,29 @@
+[
+  [
+    {
+      "name": "Ana Maria",
+      "description": "¡Recomiendo encarecidamente la aplicación de consultorías virtuales! Como alguien que ha utilizado sus servicios varias veces, puedo decir que han sido una herramienta increíblemente útil y valiosa para mí.",
+      "price": "5☆"
+    },
+    {
+      "name": "Juan Alberto",
+      "description": "Me encanta la comodidad de poder conectarme con expertos en diferentes áreas desde cualquier lugar y en cualquier momento, y siempre me han proporcionado soluciones efectivas y prácticas a mis problemas.",
+      "price": "4☆"
+    },
+    {
+      "name": "Alexander Cuervo",
+      "description": "La plataforma es fácil de usar y la atención al cliente es excepcional. Si estás buscando una forma de recibir asesoramiento personalizado y efectivo en línea, definitivamente prueba esta aplicación.",
+      "price": "5☆"
+    },
+    {
+      "name": "Juan Carlos",
+      "description": "Como alguien que vive en una zona rural y no tiene fácil acceso a servicios de consultoría en persona, esta aplicación ha sido una verdadera bendición. ",
+      "price": "5☆"
+    },
+    {
+      "name": "Lorena Hoyos",
+      "description": "Me ha permitido conectarme con expertos en diferentes campos y recibir asesoramiento personalizado sin tener que salir de mi casa. ",
+      "price": "4☆"
+    }
+  ]
+]
