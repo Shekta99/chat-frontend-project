@@ -21,9 +21,8 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import fondo from "../img/fondo.jpg";
 
-function AddRestaurant() {
+function AddAnnounce() {
   const toast = useToast();
   const history = useNavigate();
   const colorInteractiveElements = "blue.600";
@@ -40,7 +39,7 @@ function AddRestaurant() {
     const reqOps = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, speciality, imageURL }),
+      body: JSON.stringify({ name, speciality, imageURL, availability: true }),
     };
     await fetch(
       "https://bejewelled-khapse-d90703.netlify.app/api/Advertisement",
@@ -56,20 +55,12 @@ function AddRestaurant() {
       status: "success",
       duration: 9000,
       isClosable: true,
-      onCloseComplete: () => history("/advertisement-list"),
+      onCloseComplete: () => history("/advertisements-list"),
     });
   };
 
   return (
-    <div
-      style={{
-        backgroundImage: `url(${fondo})`,
-        height: "100vh",
-        width: "100%",
-        margin: 0,
-        backgroundSize: "cover",
-      }}
-    >
+    <div>
       <Box
         maxW="sm"
         marginX="auto"
@@ -79,7 +70,7 @@ function AddRestaurant() {
       >
         <Center>
           <VStack spacing={8}>
-            <Heading size="lg">AddRestaurant</Heading>
+            <Heading size="lg">Add Advertisement</Heading>
             <Box w="100%">
               <Text>Name:</Text>
               <InputGroup>
@@ -89,7 +80,7 @@ function AddRestaurant() {
                 <Input
                   color={colorText}
                   bg={colorBackgroundInputs}
-                  placeholder="Mexican Tour"
+                  placeholder="Andres"
                   borderColor="black"
                   onChange={(e) => setName(e.target.value)}
                   _hover={{ borderColor: colorHover }}
@@ -149,4 +140,4 @@ function AddRestaurant() {
   );
 }
 
-export default AddRestaurant;
+export default AddAnnounce;

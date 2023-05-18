@@ -5,6 +5,7 @@ import TestimonialsPage from "./pages/TestimonialsPage";
 import Footer from "./utils/Footer";
 import AboutPage from "./pages/AboutPage";
 import AnnounceList from "./components/AnnounceList/AnnounceList";
+import AddAnnounce from "./components/AnnounceList/AddAnnounce";
 
 const homeData = {
   title: "Bienvenidos",
@@ -28,6 +29,7 @@ function App() {
           <Route path="/testimonials" element={<TestimonialsPage />} />
           <Route path="/about-us" element={<AboutPage />} />
           <Route path="/advertisements-list" element={<AnnounceList />} />
+          <Route path="/announce-add" element={<AddAnnounce />} />
         </Routes>
       </Router>
       <Footer />
