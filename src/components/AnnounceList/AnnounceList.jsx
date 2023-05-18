@@ -57,7 +57,8 @@ function AnnounceList() {
           <Suspense fallback={<h1>Loading...</h1>}>
             {advertisement.map((advertisement) => (
               <Announce
-                key={advertisement.id}
+                key={advertisement._id}
+                id={advertisement._id}
                 name={advertisement.name}
                 speciality={advertisement.speciality}
                 imageUrl={advertisement.imageURL}

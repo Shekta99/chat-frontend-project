@@ -6,9 +6,15 @@ import {
   Text,
   Image,
   useColorModeValue,
+  Button,
 } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
-const Announce = ({ name, speciality, imageUrl, availability }) => {
+const Announce = ({ name, speciality, imageUrl, availability, id }) => {
+  const history = useNavigate();
+  const HandleClick = () => {
+    history(`/time-slot/${id}`);
+  };
   return (
     <>
       <Center py={6}>
@@ -58,6 +64,7 @@ const Announce = ({ name, speciality, imageUrl, availability }) => {
           >
             {speciality.toString()}
           </Text>
+          <Button onClick={HandleClick}>Reservar</Button>
         </Box>
       </Center>
     </>
