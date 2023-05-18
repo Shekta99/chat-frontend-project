@@ -29,8 +29,8 @@ function Header() {
         <Link href="/testimonials" margin="2%">
           Testimonios
         </Link>
-        <Link href="/contact" margin="2%">
-          Contacto
+        <Link href="/advertisements-list" margin="2%">
+          Anuncios
         </Link>
       </Flex>
     </Flex>
