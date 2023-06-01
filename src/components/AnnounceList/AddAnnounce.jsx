@@ -25,12 +25,11 @@ import { useNavigate } from "react-router-dom";
 function AddAnnounce() {
   const toast = useToast();
   const history = useNavigate();
-  const colorInteractiveElements = "blue.600";
-  const colorHover = "blue.300";
-  const { toggleColorMode } = useColorMode();
-  const colorBackground = useColorModeValue("gray.300", "gray.700");
-  const colorBackgroundInputs = useColorModeValue("white", "gray.500");
-  const colorText = useColorModeValue("black", "white");
+  const colorInteractiveElements = "#6E3667";
+  const colorHover = "#88D317";
+  const colorBackground = "#88D317";
+  const colorBackgroundInputs = "white";
+  const colorText = "#6E3667";
   const [name, setName] = useState("");
   const [speciality, setSpec] = useState("");
   const [imageURL, setImg] = useState("");
@@ -70,9 +69,9 @@ function AddAnnounce() {
       >
         <Center>
           <VStack spacing={8}>
-            <Heading size="lg">Add Advertisement</Heading>
+            <Heading size="lg">Crear anuncio</Heading>
             <Box w="100%">
-              <Text>Name:</Text>
+              <Text>Nombre:</Text>
               <InputGroup>
                 <InputLeftElement>
                   <ChatIcon color={colorInteractiveElements} />
@@ -89,7 +88,7 @@ function AddAnnounce() {
             </Box>
 
             <Box w="100%">
-              <Text>Speciality:</Text>
+              <Text>Especialidad:</Text>
               <InputGroup>
                 <InputLeftElement
                   children={
@@ -99,7 +98,7 @@ function AddAnnounce() {
                 <Input
                   color={colorText}
                   bg={colorBackgroundInputs}
-                  placeholder="Mexican food"
+                  placeholder="Comida mexicana"
                   borderColor="black"
                   onChange={(e) => setSpec(e.target.value)}
                   _hover={{ borderColor: colorHover }}
@@ -107,7 +106,7 @@ function AddAnnounce() {
               </InputGroup>
             </Box>
             <Box w="100%">
-              <Text>Image Url:</Text>
+              <Text>Imagen Url:</Text>
               <InputGroup>
                 <InputLeftElement
                   children={<LinkIcon color={colorInteractiveElements} />}
@@ -130,7 +129,7 @@ function AddAnnounce() {
                 _hover={{ bg: colorHover, color: "black" }}
                 onClick={handleSubmit}
               >
-                Add
+                Añadir
               </Button>
             </HStack>
           </VStack>
