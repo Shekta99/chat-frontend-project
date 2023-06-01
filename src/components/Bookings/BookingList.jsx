@@ -27,7 +27,7 @@ function BookingList() {
   }, []);
 
   return (
-    <Center>
+    <Center my="6%">
       <HStack>
         <Suspense fallback={<h1>Loading...</h1>}>
           {bookings.length !== 0 ? (

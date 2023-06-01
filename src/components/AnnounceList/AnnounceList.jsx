@@ -54,7 +54,7 @@ function AnnounceList() {
   }, []);
 
   return (
-    <Center>
+    <Center my="6%">
       <VStack>
         {user ? (
           <HStack>
