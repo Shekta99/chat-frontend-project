@@ -50,7 +50,7 @@ function Header() {
           <MenuList>
             {user && user.rol === "admin" ? (
               <MenuItem>
-                <Link href="/stadistics">Estadisticas</Link>
+                <Link href="/bookings">Reservas</Link>
               </MenuItem>
             ) : null}
             {user ? (

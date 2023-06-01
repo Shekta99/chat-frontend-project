@@ -31,10 +31,11 @@ function TimeSlotsList() {
           {timeSlots.length !== 0 ? (
             timeSlots.map((timeSlots) => (
               <TimeSlot
-                key={timeSlots.id}
+                key={timeSlots._id}
                 place={timeSlots.place}
                 date={timeSlots.date}
                 hour={timeSlots.hour}
+                availability={timeSlots.availability}
               />
             ))
           ) : (

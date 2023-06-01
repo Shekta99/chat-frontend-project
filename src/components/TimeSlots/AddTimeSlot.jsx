@@ -35,7 +35,7 @@ const AddTimeSlot = () => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        park: id.slice(1),
+        advertisement: id.slice(1),
         place,
         date,
         hour,

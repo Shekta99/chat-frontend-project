@@ -9,6 +9,7 @@ import AddAnnounce from "./components/AnnounceList/AddAnnounce";
 import TimeSlotsList from "./components/TimeSlots/TimeSlotsList";
 import AddTimeSlot from "./components/TimeSlots/AddTimeSlot";
 import LoginPage from "./pages/LoginPage";
+import BookingList from "./components/Bookings/BookingList";
 
 const homeData = {
   title: "Bienvenidos",
@@ -35,6 +36,7 @@ function App() {
           <Route path="/announce-add" element={<AddAnnounce />} />
           <Route path="/time-slot/:id" element={<TimeSlotsList />} />
           <Route path="/time-slots-add/:id" element={<AddTimeSlot />} />
+          <Route path="/bookings" element={<BookingList />} />
           <Route path="/login" element={<LoginPage />} />
         </Routes>
       </Router>
