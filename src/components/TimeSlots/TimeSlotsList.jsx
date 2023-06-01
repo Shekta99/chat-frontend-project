@@ -25,7 +25,7 @@ function TimeSlotsList() {
   }, []);
 
   return (
-    <Center>
+    <Center my="6%">
       <HStack>
         <Suspense fallback={<h1>Loading...</h1>}>
           {timeSlots.length !== 0 ? (
