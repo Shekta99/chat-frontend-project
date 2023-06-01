@@ -104,7 +104,7 @@ const TimeSlot = ({ date, hour, place, availability }) => {
           >
             {place}
           </Text>
-          <Button onClick={handleBooking}>Reservar</Button>
+          {availability && <Button onClick={handleBooking}>Reservar</Button>}
         </Box>
       </Center>
     </>
