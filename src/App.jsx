@@ -7,6 +7,8 @@ import AboutPage from "./pages/AboutPage";
 import AnnounceList from "./components/AnnounceList/AnnounceList";
 import AddAnnounce from "./components/AnnounceList/AddAnnounce";
 import TimeSlotsList from "./components/TimeSlots/TimeSlotsList";
+import AddTimeSlot from "./components/TimeSlots/AddTimeSlot";
+import LoginPage from "./pages/LoginPage";
 
 const homeData = {
   title: "Bienvenidos",
@@ -32,6 +34,8 @@ function App() {
           <Route path="/advertisements-list" element={<AnnounceList />} />
           <Route path="/announce-add" element={<AddAnnounce />} />
           <Route path="/time-slot/:id" element={<TimeSlotsList />} />
+          <Route path="/time-slots-add/:id" element={<AddTimeSlot />} />
+          <Route path="/login" element={<LoginPage />} />
         </Routes>
       </Router>
       <Footer />

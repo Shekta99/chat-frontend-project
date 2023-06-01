@@ -1,12 +1,18 @@
 import { HStack, Button, Center } from "@chakra-ui/react";
 import { lazy, useState, Suspense, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { useUser } from "../../providers/UserProvider";
 
 const TimeSlot = lazy(() => import("./TimeSlot"));
 
 function TimeSlotsList() {
   const [timeSlots, setTimeSlots] = useState([]);
   const { id } = useParams();
+  const { user } = useUser();
+  const history = useNavigate();
+
+  const colorInteractiveElements = "#88D317";
+  const colorHover = "#88D317";
 
   useEffect(() => {
     fetch("https://bejewelled-khapse-d90703.netlify.app/api/TimeSlots", {
@@ -27,12 +33,24 @@ function TimeSlotsList() {
               <TimeSlot
                 key={timeSlots.id}
                 place={timeSlots.place}
-                day={timeSlots.day}
+                date={timeSlots.date}
                 hour={timeSlots.hour}
               />
             ))
           ) : (
-            <h1>Not timeSlots found</h1>
+            <h1>No se encontraron horarios</h1>
+          )}
+          {user.rol === "admin" && (
+            <Button
+              bg={colorInteractiveElements}
+              onClick={() => {
+                history(`/time-slots-add/:${id}`);
+              }}
+              color="white"
+              _hover={{ bg: colorHover, color: "black" }}
+            >
+              Añadir horario
+            </Button>
           )}
         </Suspense>
       </HStack>

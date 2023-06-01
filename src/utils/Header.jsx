@@ -1,8 +1,20 @@
 import { Flex, Image, Link, Text } from "@chakra-ui/react";
 import logo from "../assets/logo.png";
-import { HStack } from "@chakra-ui/react";
+import {
+  HStack,
+  Menu,
+  MenuItem,
+  MenuButton,
+  Avatar,
+  MenuList,
+} from "@chakra-ui/react";
+import { useUser } from "../providers/UserProvider";
 
 function Header() {
+  const { user, setUser } = useUser();
+  const handleLogOut = () => {
+    setUser(null);
+  };
   return (
     <Flex
       fontSize="3xl"
@@ -32,6 +44,24 @@ function Header() {
         <Link href="/advertisements-list" margin="2%">
           Anuncios
         </Link>
+
+        <Menu>
+          <MenuButton as={Avatar}> </MenuButton>
+          <MenuList>
+            {user && user.rol === "admin" ? (
+              <MenuItem>
+                <Link href="/stadistics">Estadisticas</Link>
+              </MenuItem>
+            ) : null}
+            {user ? (
+              <MenuItem onClick={handleLogOut}>Cerrar Sesión</MenuItem>
+            ) : (
+              <MenuItem>
+                <Link href="/login">Iniciar Sesión</Link>
+              </MenuItem>
+            )}
+          </MenuList>
+        </Menu>
       </Flex>
     </Flex>
   );
