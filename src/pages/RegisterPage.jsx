@@ -19,7 +19,7 @@ import { useUser } from "../providers/UserProvider";
 import { decodeToken } from "react-jwt";
 import CryptoJS from "crypto-js";
 
-const LoginPage = () => {
+const RegisterPage = () => {
   const [show, setShow] = useState(false);
   const [name, setName] = useState("");
   const { setUser } = useUser();
@@ -35,7 +35,7 @@ const LoginPage = () => {
 
   const history = useNavigate();
 
-  const handleSignIn = async () => {
+  const handleRegister = async () => {
     const hashedPassword = CryptoJS.AES.encrypt(
       password,
       "password"
@@ -45,42 +45,32 @@ const LoginPage = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ name, email: name, password: hashedPassword }),
+      body: JSON.stringify({
+        name,
+        email: name,
+        password: hashedPassword,
+        rol: "user",
+      }),
       mode: "cors",
     };
-    await fetch("http://localhost:8000/login/auth", reqOps)
+    await fetch("http://localhost:8000/register", reqOps)
       .then((response) => response.json())
       .then((data) => {
-        if (!data.token) {
-          toast({
-            title: "Credentials",
-            description: "Incorrect credentials",
-            status: "error",
-            duration: 9000,
-            isClosable: true,
-            onCloseComplete: () => history("/login"),
-          });
-        } else {
-          const decodedToken = decodeToken(data.token);
-          setUser({
-            name: decodedToken.name,
-            rol: decodedToken.rol,
-            token: data.token,
-          });
-          toast({
-            title: "Logged in",
-            description: "Correct credentials",
-            status: "success",
-            duration: 9000,
-            isClosable: true,
-            onCloseComplete: () => history("/chat-list"),
-          });
-        }
+        const decodedToken = decodeToken(data.token);
+        setUser({
+          name: decodedToken.name,
+          rol: decodedToken.rol,
+          token: data.token,
+        });
+        toast({
+          title: "User Created",
+          description: "We've created the User",
+          status: "success",
+          duration: 9000,
+          isClosable: true,
+          onCloseComplete: () => history("/chat-list"),
+        });
       });
-  };
-
-  const handleRegister = async () => {
-    history("/register");
   };
 
   return (
@@ -150,10 +140,10 @@ const LoginPage = () => {
                 color="white"
                 _hover={{ bg: colorHover, color: "black" }}
                 onClick={() => {
-                  handleSignIn();
+                  history("/login");
                 }}
               >
-                Sign-in
+                Back
               </Button>
               <Button
                 bg={colorInteractiveElements}
@@ -173,4 +163,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default RegisterPage;

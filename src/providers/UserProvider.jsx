@@ -1,7 +1,7 @@
 import { createContext, useState, useContext, useEffect } from "react";
 
 const userContextDefaultValue = {
-  user: { name: "", rol: "" },
+  user: { name: "", rol: "", token: "" },
   setUser: () => {},
 };
 

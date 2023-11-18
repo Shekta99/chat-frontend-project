@@ -5,8 +5,8 @@ const NotAutorized = () => {
   const history = useNavigate();
   return (
     <Center
-      color="#6E3667"
-      backgroundColor="#88D317"
+      color="#5F6F52"
+      backgroundColor="#F9EBC7"
       width="100%"
       my="35%"
       mx="auto"

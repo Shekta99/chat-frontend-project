@@ -13,25 +13,26 @@ import { useUser } from "../providers/UserProvider";
 function Header() {
   const { user, setUser } = useUser();
   const handleLogOut = () => {
+    window.location.href = "/login";
     setUser(null);
   };
   return (
     <Flex
       fontSize="3xl"
-      backgroundColor={"#6E3667"}
+      backgroundColor={"#5F6F52"}
       justifyContent="space-around"
-      color={"#88D317"}
+      color={"#F9EBC7"}
     >
       <Link href="/">
         <HStack>
           <Image
-            src={logo}
+            src="https://cdn-icons-png.flaticon.com/512/6772/6772234.png"
             alt="Logo de tu empresa"
             width="100px"
             marginx="2%"
             padding={0}
           />
-          <Text as="b">Booking App</Text>
+          <Text as="b">Safe Surfer</Text>
         </HStack>
       </Link>
       <Flex justifyContent="space-between" width="50%" mt="1%">
@@ -41,13 +42,13 @@ function Header() {
         <Link href="/testimonials" margin="2%">
           Testimonios
         </Link>
-        <Link href="/advertisements-list" margin="2%">
-          Anuncios
+        <Link href="/chat-list" margin="2%">
+          Chats
         </Link>
 
         <Menu>
           <MenuButton as={Avatar}> </MenuButton>
-          <MenuList>
+          <MenuList color="black">
             {user && user.rol === "admin" ? (
               <MenuItem>
                 <Link href="/bookings">Reservas</Link>

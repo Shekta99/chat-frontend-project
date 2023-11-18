@@ -10,10 +10,10 @@ import {
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 
-const Announce = ({ name, speciality, imageUrl, availability, id }) => {
+const Chat = ({ name, imageUrl, id }) => {
   const history = useNavigate();
   const HandleClick = () => {
-    history(`/time-slot/${id}`);
+    history(`/chat/${id}`);
   };
   return (
     <>
@@ -48,27 +48,12 @@ const Announce = ({ name, speciality, imageUrl, availability, id }) => {
           <Heading fontSize={"2xl"} fontFamily={"body"}>
             {name}
           </Heading>
-          {availability ? (
-            <Badge borderRadius="full" px="2" colorScheme={"teal"}>
-              {"Disponible"}
-            </Badge>
-          ) : (
-            <Badge borderRadius="full" px="2" colorScheme={"red"}>
-              {"Ocupado"}
-            </Badge>
-          )}
-          <Text
-            textAlign={"center"}
-            color={useColorModeValue("gray.700", "gray.400")}
-            px={3}
-          >
-            {speciality.toString()}
-          </Text>
-          <Button onClick={HandleClick}>Reservar</Button>
+
+          <Button onClick={HandleClick}>Chatear</Button>
         </Box>
       </Center>
     </>
   );
 };
 
-export default Announce;
+export default Chat;

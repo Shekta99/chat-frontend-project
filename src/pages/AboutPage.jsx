@@ -13,25 +13,28 @@ function AboutPage() {
           padding="5%"
           color={"#535353"}
         >
-          <Heading mb="4%">Booking App</Heading>
+          <Heading mb="4%">Safe Surfer</Heading>
           <Box width="90%">
             <Text mb="2%">
-              Nuestros clientes han quedado impresionados con la calidad y
-              eficacia de nuestros servicios de consultorías virtuales. Desde la
-              comodidad de su hogar, han podido conectarse con nuestros expertos
-              y recibir asesoramiento personalizado en una amplia variedad de
-              temas. Muchos de ellos han expresado su gratitud por haber
-              encontrado una solución fácil y accesible para resolver sus
-              problemas y alcanzar sus metas.
+              Presentamos nuestra innovadora aplicación de chat encriptado,
+              diseñada con un enfoque implacable en tu privacidad y seguridad en
+              línea. Nuestra aplicación te permite comunicarte de manera segura
+              con tus amigos, colegas y seres queridos, gracias a la
+              encriptación que protege tus conversaciones de miradas no
+              deseadas. Ya no tienes que preocuparte por posibles intrusiones en
+              tus mensajes. Con una interfaz intuitiva y funciones fáciles de
+              usar, proporcionamos la solución perfecta para mantener tus
+              comunicaciones seguras y confidenciales. Descubre la tranquilidad
+              que brinda nuestra aplicación de chat encriptado y únete a la
+              comunidad de usuarios que valoran la privacidad en línea.
             </Text>
             <Text>
               ¡No tomes solo nuestra palabra, escucha lo que nuestros clientes
-              tienen que decir sobre nuestra aplicación de consultorías
-              virtuales!
+              tienen que decir sobre nuestra aplicación de chat encriptado!
             </Text>
             <Button
               marginY="3%"
-              backgroundColor="#88D317"
+              backgroundColor="#F9EBC7"
               color="#535353"
               onClick={() => {
                 window.location.assign("/testimonials");
@@ -42,7 +45,11 @@ function AboutPage() {
           </Box>
         </Box>
         <Box my="auto">
-          <Image borderRadius="5px" alt="Don jose" src={restaurant} />
+          <Image
+            borderRadius="5px"
+            alt="Don jose"
+            src={"https://cdn-icons-png.flaticon.com/512/6772/6772234.png"}
+          />
         </Box>
       </Flex>
     </>

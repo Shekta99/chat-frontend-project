@@ -4,10 +4,10 @@ import { useNavigate } from "react-router-dom";
 import { useUser } from "../../providers/UserProvider";
 import NotAutorized from "../../utils/NotAutorized";
 
-const Announce = lazy(() => import("./Announce"));
+const Chat = lazy(() => import("./Chat"));
 
-function AnnounceList() {
-  const [advertisement, setAdvertisements] = useState([
+function ChatList() {
+  const [chats, setChats] = useState([
     {
       id: 1,
       name: "Andres Sarmiento",
@@ -45,12 +45,15 @@ function AnnounceList() {
   const { user } = useUser();
 
   useEffect(() => {
-    fetch("https://bejewelled-khapse-d90703.netlify.app/api/Advertisement", {
-      mode: "cors",
-      method: "GET",
-    })
-      .then((response) => response.json())
-      .then((data) => setAdvertisements(data.advertisements));
+    if (user !== null) {
+      fetch(`http://localhost:8000/chats/${user.name}`, {
+        mode: "cors",
+        method: "GET",
+        headers: { Authorization: user.token },
+      })
+        .then((response) => response.json())
+        .then((data) => setChats(data));
+    }
   }, []);
 
   return (
@@ -59,26 +62,26 @@ function AnnounceList() {
         {user ? (
           <HStack>
             <Suspense fallback={<h1>Loading...</h1>}>
-              {advertisement.map((advertisement) => (
-                <Announce
-                  key={advertisement._id}
-                  id={advertisement._id}
-                  name={advertisement.name}
-                  speciality={advertisement.speciality}
-                  imageUrl={advertisement.imageURL}
-                  availability={advertisement.availability}
-                />
-              ))}
+              {chats &&
+                chats.map((chat) => (
+                  <Chat
+                    key={chat._id}
+                    id={chat._id}
+                    name={
+                      chat.userOne == user.name ? chat.userTwo : chat.userOne
+                    }
+                  />
+                ))}
             </Suspense>
           </HStack>
         ) : (
           <NotAutorized />
         )}
-        {user && user.rol == "admin" && (
+        {user && (
           <Button
             bg={colorInteractiveElements}
             onClick={() => {
-              history("/announce-add");
+              history("/chat-add");
             }}
             color="white"
             _hover={{ bg: colorHover, color: "black" }}
@@ -91,4 +94,4 @@ function AnnounceList() {
   );
 }
 
-export default AnnounceList;
+export default ChatList;

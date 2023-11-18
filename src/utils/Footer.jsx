@@ -24,7 +24,7 @@ function Footer() {
   return (
     <Grid
       fontSize="xl"
-      backgroundColor={"#6E3667"}
+      backgroundColor={"#5F6F52"}
       justifyContent="center"
       color={"#F4F4F4"}
       templateColumns="repeat(3, 1fr)"

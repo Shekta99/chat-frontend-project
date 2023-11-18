@@ -14,19 +14,14 @@ function ResumeSection() {
       color={"#535353"}
     >
       <Heading mb="2%" size="xl">
-        Booking App
+        Safe Surfer
       </Heading>
 
       <Text fontSize="lg" as="em">
-        Bienvenidos a nuestra aplicación de consultorías virtuales, donde
-        ofrecemos servicios de asesoramiento personalizado en línea. Contamos
-        con un equipo de expertos en diferentes áreas y que se enfocan en
-        brindar soluciones efectivas y eficientes a las necesidades de nuestros
-        clientes. Nuestra plataforma ofrece una experiencia sencilla y accesible
-        para conectarte con nuestros consultores, lo que te permite obtener
-        respuestas a tus preguntas desde cualquier lugar y en cualquier momento.
-        Confía en nosotros para ayudarte a alcanzar tus metas y superar tus
-        desafíos. ¡Únete a nuestra comunidad hoy mismo!
+        ¡Conversaciones seguras y privadas al alcance de tu mano! Descubre la
+        revolución en la privacidad en línea con nuestra aplicación de chat
+        encriptado. Comunícate con confianza y mantén tus conversaciones lejos
+        de miradas indiscretas. ¡Únete a nosotros ahora!
       </Text>
     </Box>
   );

@@ -1,22 +1,22 @@
 import { Heading, Text, Box, Button, Grid, GridItem } from "@chakra-ui/react";
 import ResumeSection from "../components/ResumeSection";
 import fondo from "../assets/fondoHome.jpg";
-import abogado from "../assets/abogado.jpg";
-import arquitectura from "../assets/arquitectura.jpg";
-import developer from "../assets/developer.jpg";
-import redes from "../assets/redes.jpg";
-import medico from "../assets/doctor.jpg";
-import artista from "../assets/artista.jpg";
 import { Image } from "@chakra-ui/react";
 
 function HomePage({ title }) {
   const images = [
-    { src: abogado, alt: "abogado" },
-    { src: arquitectura, alt: "arquitecto" },
-    { src: developer, alt: "developer" },
-    { src: redes, alt: "redes" },
-    { src: medico, alt: "medico" },
-    { src: artista, alt: "artista" },
+    {
+      src: "https://hectoraguilarcoach.com/wp-content/uploads/2020/05/image0-1.png",
+      alt: "amigo",
+    },
+    {
+      src: "https://www.etapainfantil.com/wp-content/uploads/2016/07/Vinculo-familiar-800x533.jpg.webp",
+      alt: "familiar",
+    },
+    {
+      src: "https://static.diariofemenino.com/uploads/amor/217288-liarte-compi.jpg",
+      alt: "compañero",
+    },
   ];
   return (
     <>
@@ -63,7 +63,7 @@ function HomePage({ title }) {
       >
         <GridItem colSpan={3} mb="3%">
           <Text as="b" fontSize="3xl">
-            Encuentra lo que necesitas!
+            Chatea con quien quieras!
           </Text>
         </GridItem>
         {images.map((image) => (

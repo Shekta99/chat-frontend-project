@@ -3,7 +3,6 @@ import Testimonials from "../assets/Testimonials.json";
 import fondo from "../assets/fondoMenu.jpeg";
 
 function TestimonialsPage() {
-  console.log(Testimonials);
   return (
     <>
       <Box
@@ -60,7 +59,7 @@ function TestimonialsPage() {
               <Heading size="sm">{item.name}</Heading>
               <Text>{item.description}</Text>
             </Box>
-            <Box color="#6E3667">
+            <Box color="#5F6F52">
               <Text fontSize="3xl">{item.price}</Text>
             </Box>
           </Flex>
