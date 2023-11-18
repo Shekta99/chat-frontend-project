@@ -26,10 +26,10 @@ function Header() {
       <Link href="/">
         <HStack>
           <Image
-            src="https://cdn-icons-png.flaticon.com/512/6772/6772234.png"
+            src={logo}
             alt="Logo de tu empresa"
-            width="100px"
-            marginx="2%"
+            width="150px"
+            marginx="0%"
             padding={0}
           />
           <Text as="b">Safe Surfer</Text>
